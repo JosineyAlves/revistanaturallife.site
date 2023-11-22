@@ -301,13 +301,6 @@
          })(window,document,'script','dataLayer','GTM-M426LZ5W');
       </script>
       <!-- End Google Tag Manager -->
-      <!-- Event snippet for Compra | Audición Blindada conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-10998660797/8uwiCPX3_bwYEL39yPwo',
-      'transaction_id': ''
-  });
-</script>
    </head>
    <body>
       <!-- Google Tag Manager (noscript) -->
@@ -458,14 +451,17 @@
                }
             </style>
             <!-- VSL -->
-            <div id="vid_64e42f6502d65b000a082b29" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_64e42f6502d65b000a082b29" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/64e42f6502d65b000a082b29/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_64e42f6502d65b000a082b29" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_64e42f6502d65b000a082b29">var s=document.createElement("script");s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/64e42f6502d65b000a082b29/player.js",s.async=!0,document.head.appendChild(s);</script>
-            <!-- VSL -->
+            <div id="vid_64e42f6502d65b000a082b29" style="position:relative;width:100%;padding: 56.25% 0 0;">
+               <img id="thumb_64e42f6502d65b000a082b29" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/64e42f6502d65b000a082b29/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+               <div id="backdrop_64e42f6502d65b000a082b29" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div>
+            </div>
+            <script type="text/javascript" id="scr_64e42f6502d65b000a082b29">var s=document.createElement("script");s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/64e42f6502d65b000a082b29/player.js",s.async=!0,document.head.appendChild(s);</script>            <!-- VSL -->
             <br>
          </div>
       </div>
       </div>
       </div>
-      <div id="division-RkYytd88538352" class="esconde">
+      <div id="division-RkYytd88538352" class="esconder">
          <style>
             #division-RkYytd88538352 {
             position:relative;
@@ -485,6 +481,18 @@
             }
             }
          </style>
+         <!-- HOTMART - Upsell Widget -->
+         <div id="box_hotmart"></div>
+         <script src="https://pay.hotmart.com/assets/js/hotmart.upsell_checkout.js"></script>
+         <script>
+            opts = {
+            key: 'USL-123449-396090-e40fc7bac5c3ebd815c898bb7ce6f7c2',
+            width: '650' ,
+            height: '420'
+            };
+            Upsell.Widget.show(opts);
+         </script>
+         <!-- HOTMART - Upsell Widget [end] -->
       </div>
       </div>
       </div>
@@ -549,5 +557,49 @@
             </a>
          </div>
       </footer>
+      <style>.esconder { display: none }</style>
+      <script type="text/javascript">
+         document.addEventListener("DOMContentLoaded", function() {
+         /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+         var SECONDS_TO_DISPLAY = 220;
+         var CLASS_TO_DISPLAY = ".esconder";
+         
+         /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+         var attempts = 0;
+         var elsHiddenList = [];
+         var elsDisplayed = false;
+         var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+         var alreadyDisplayedKey =`alreadyElsDisplayed${SECONDS_TO_DISPLAY}`
+         var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+         
+         setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
+         
+         var showHiddenElements = function () {
+         elsDisplayed = true;
+         elsHiddenList.forEach((e) => e.style.display = "block");
+         localStorage.setItem(alreadyDisplayedKey, true)
+         }
+         
+         var startWatchVideoProgress = function () {
+         if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+         if (attempts >= 10) return;
+         attempts += 1;
+         return setTimeout(function () { startWatchVideoProgress() }, 1000);
+         }
+         
+         smartplayer.instances[0].on('timeupdate', () => {
+         if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+         if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+         showHiddenElements();
+         })
+         }
+         
+         if (alreadyElsDisplayed === 'true') {
+         setTimeout(function () { showHiddenElements(); }, 100);
+         } else {
+         startWatchVideoProgress()
+         }
+         });
+      </script>
    </body>
 </html>
