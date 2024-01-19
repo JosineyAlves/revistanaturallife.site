@@ -310,7 +310,7 @@ Email: information.naturallife@gmail.com
 © 2024 Nature Life - Todos los Derechos Reservados.
 <br class="d-block d-md-none">
 <a href="privacidad.html" class="footer_dn text-white-50" style="color: #989BA6!important;">
-Privacidad
+Privacid
 </a> |
 <a href="terminos.html" class="footer_dn text-white-50" style="color: #989BA6!important;">
 Terminos de Uso
@@ -322,47 +322,7 @@ Terminos de Uso
         </div>
         </div>
     </footer>
-    <script>
-        function waitForFunction(fcn, callback) {
-            if (eval('typeof ' + fcn) == 'function') {
-                callback();
-            } else {
-                setTimeout(function() {
-                    waitForFunction(fcn, callback)
-                }, 400)
-            }
-        }
-        document.getElementById("vslp_fallback").addEventListener('change', eventFalback);
 
-        function eventFalback() {
-            waitForFunction('gtag', function() {
-                gtag('event', 'vsl_fallback', {
-                    'event_category': 'VSL_' + vslpInputpv,
-                    'event_label': _product_sigla
-                });
-            })
-        }
-
-        function getParameterByName(name) {
-            var url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-
-        headline = getParameterByName('hl');
-        if (headline && headline != "") {
-            var titulos_pagina = document.getElementsByClassName("headline");
-            var i;
-            for (i = 0; i < titulos_pagina.length; i++) {
-                titulos_pagina[i].innerText = headline;
-                document.title = headline;
-            }
-        }
-    </script>
 </body>
 
 </html>
